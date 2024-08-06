@@ -1,14 +1,16 @@
 #ifndef SENSORSTUB_H
 #define SENSORSTUB_H
+
 #include "IWeatherSensor.h"
 
 class SensorStub : public IWeatherSensor {
- private:
+private:
     int temperature;
     int precipitation;
     int humidity;
     int windSpeed;
- public:
+
+public:
     SensorStub(int temp, int precip, int humidity, int windSpeed);
     int Humidity() const override;
     int Precipitation() const override;
@@ -16,4 +18,4 @@ class SensorStub : public IWeatherSensor {
     int WindSpeedKMPH() const override;
 };
 
-#endif 
+#endif

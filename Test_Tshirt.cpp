@@ -1,6 +1,7 @@
 #include <cassert>
 #include <iostream>
 #include "TshirtSizeClassifier.h"
+#include "Test_Tshirt.h"
 
 void TestForTshirtSizeClassifier() {
     assert(SizeChecker(37) == 'S');

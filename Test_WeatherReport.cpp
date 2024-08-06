@@ -2,6 +2,7 @@
 #include <iostream>
 #include "SensorStub.h"
 #include "WeatherReportGenerator.h"
+#include "Test_WeatherReport.h"
 
 void TestRainy() {
     SensorStub sensor(26, 70, 72, 52);
