@@ -10,9 +10,8 @@ std::string generateColorMap() {
     std::ostringstream colorMapStream;
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 5; j++) {
-            colorMapStream << (i * 5 + j + 1
-            ) << " | " << majorColor[i] << " | " 
-            << minorColor[i] << "\n";
+            colorMapStream << (i * 5 + j + 1) << " | " << majorColor[i] << " | " 
+                           << minorColor[i] << "\n";
         }
     }
     return colorMapStream.str();
@@ -23,4 +22,3 @@ int printColorMap() {
     std::cout << colorMap;
     return 25;
 }
-
