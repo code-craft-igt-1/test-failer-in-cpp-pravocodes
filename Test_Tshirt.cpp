@@ -11,3 +11,4 @@ void TestForTshirtSizeClassifier() {
     assert(SizeChecker(43) == 'L');
     std::cout << "All is well (maybe!)\n";
 }
+

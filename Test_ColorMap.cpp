@@ -9,3 +9,4 @@ void TestForColorMapping() {
     assert(printColorMap() == 25);
     std::cout << "All is well (maybe!)\n";
 }
+

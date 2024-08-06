@@ -1,3 +1,5 @@
+#include "TshirtSizeClassifier.h"
+
 char SizeChecker(int cms) {
     char sizeName = '\0';
     if (cms < 38) {
