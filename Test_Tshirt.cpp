@@ -5,7 +5,7 @@
 
 void TestForTshirtSizeClassifier() {
     assert(SizeChecker(37) == 'S');
-    assert(SizeChecker(38) == 'S');
+    assert(SizeChecker(38) == 'M');
     assert(SizeChecker(40) == 'M');
     assert(SizeChecker(41) == 'M');
     assert(SizeChecker(43) == 'L');

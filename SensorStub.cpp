@@ -1,10 +1,7 @@
 #include "SensorStub.h"
 
-SensorStub::SensorStub(int temp, int precip, int humidity, int windSpeed) {
-    this->temperature = temp;
-    this->precipitation = precip;
-    this->humidity = humidity;
-    this->windSpeed = windSpeed;
+SensorStub::SensorStub(int temperature, int precip, int humidity, int windSpeed)
+: temperature(temperature), precipitation(precip), humidity(humidity), windSpeed(windSpeed) {
 }
 
 int SensorStub::Humidity() const {
