@@ -16,7 +16,7 @@ std::string generateColorMap() {
         for (int j = 0; j < 5; j++) {
             colorMapStream << std::setw(5) << (i * 5 + j + 1) << "    |";
             colorMapStream << std::setw(15) << majorColor[i] << "    |";
-            colorMapStream << std::setw(15) << minorColor[i] << std::endl;
+            colorMapStream << std::setw(15) << minorColor[j] << std::endl;
         }
     }
     return colorMapStream.str();
