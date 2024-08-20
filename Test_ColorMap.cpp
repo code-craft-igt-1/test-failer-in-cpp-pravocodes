@@ -5,8 +5,7 @@
 #include "Test_ColorMap.h"
 
 void TestForColorMapping() {
-    // assert(generateColorMap() == expectedColorMap);
-    std::cout<<generateColorMap().size()<<" "<<expectedColorMap.size()<<std::endl;
+    assert(generateColorMap() == expectedColorMap);
     assert(printColorMap() == 25);
     std::cout << "All is well (maybe!)\n";
 }
