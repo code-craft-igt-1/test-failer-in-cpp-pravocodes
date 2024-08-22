@@ -9,7 +9,7 @@ void TestRainy() {
     SensorStub sensor(26, 70, 72, 52);
     std::string report = Report(sensor);
     std::cout << report << std::endl;
-    assert(report.find("rain") != string::npos)
+    assert(report.find("rain") != std::string::npos)
 }
 
 void TestHighPrecipitationAndLowWindspeed() {
@@ -20,5 +20,5 @@ void TestHighPrecipitationAndLowWindspeed() {
     // strengthen the assert to expose the bug
     // (function returns Sunny day, it should predict rain)
     std::string report = Report(sensor);
-    assert(report.find("rain") != string::npos);
+    assert(report.find("rain") != std::string::npos);
 }
