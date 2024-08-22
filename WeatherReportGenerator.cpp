@@ -1,4 +1,5 @@
 #include "Test_WeatherReport.h"
+#include "WeatherReportGenerator.h"
 
 std::string Report(const WeatherSpace::IWeatherSensor& sensor) {
     double temperature = sensor.TemperatureInC();
