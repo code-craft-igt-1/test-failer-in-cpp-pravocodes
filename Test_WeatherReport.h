@@ -13,12 +13,7 @@ class IWeatherSensor {
     virtual int Humidity() const = 0;
     virtual int WindSpeedKMPH() const = 0;
 };
-
-// Function to generate a weather report based on sensor data
-std::string Report(const IWeatherSensor& sensor);
-
 }
-
 void TestRainy();
 void TestHighPrecipitationAndLowWindspeed();
 

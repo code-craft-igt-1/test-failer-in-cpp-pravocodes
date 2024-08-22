@@ -2,6 +2,7 @@
 #include <string>
 #include <iostream>
 #include "Test_WeatherReport.h"
+#include "WeatherReportGenerator.h"
 
 using std::string;
 

@@ -25,5 +25,5 @@ jobs:
 
     - name: alerter fail
       run: |
-        g++ -Wall -Wextra -Werror weatherreport.cpp Test_WeatherReport.cpp SensorStub.cpp WeatherReportGenerator.cpp -o weatherreport.out
+        g++ -Wall -Wextra -Werror weatherreport.cpp Test_WeatherReport.cpp WeatherReportGenerator.cpp -o weatherreport.out
         bash .github/workflows/expectfail.sh ./weatherreport.out
