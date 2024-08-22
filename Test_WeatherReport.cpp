@@ -9,7 +9,7 @@ void TestRainy() {
     SensorStub sensor(26, 70, 72, 52);
     std::string report = Report(sensor);
     std::cout << report << std::endl;
-    assert(report.find("rain") != std::string::npos)
+    assert(report.find("rain") != std::string::npos);
 }
 
 void TestHighPrecipitationAndLowWindspeed() {
