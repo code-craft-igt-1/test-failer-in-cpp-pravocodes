@@ -48,7 +48,7 @@ class HighPrecipitationLowWindStub : public WeatherSpace::IWeatherSensor {
 
 void TestRainy() {
     SensorStub sensor;
-    string report = WeatherSpace::Report(sensor);
+    string report = Report(sensor);
     std::cout << "TestRainy: " << report << std::endl;
     assert(report == "Heavy rain");
 }
@@ -56,7 +56,7 @@ void TestRainy() {
 
 void TestHighPrecipitationAndLowWindspeed() {
     HighPrecipitationLowWindStub sensor;
-    string report = WeatherSpace::Report(sensor);
+    string report = Report(sensor);
     std::cout << "TestHighPrecipitationAndLowWindspeed: " << report << std::endl;
     assert(report == "Heavy rain");
 }
