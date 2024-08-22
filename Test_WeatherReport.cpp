@@ -1,24 +1,62 @@
 #include <cassert>
 #include <string>
 #include <iostream>
-#include "SensorStub.h"
-#include "WeatherReportGenerator.h"
 #include "Test_WeatherReport.h"
 
+using std::string;
+
+
+class SensorStub : public WeatherSpace::IWeatherSensor {
+ public:
+    int Humidity() const override {
+        return 72;
+    }
+
+    int Precipitation() const override {
+        return 70;
+    }
+
+    double TemperatureInC() const override {
+        return 26;
+    }
+
+    int WindSpeedKMPH() const override {
+        return 52;
+    }
+};
+
+
+class HighPrecipitationLowWindStub : public WeatherSpace::IWeatherSensor {
+ public:
+    double TemperatureInC() const override {
+        return 26;
+    }
+
+    int Precipitation() const override {
+        return 70;  // High precipitation
+    }
+
+    int Humidity() const override {
+        return 72;
+    }
+
+    int WindSpeedKMPH() const override {
+        return 40;  // Low wind speed
+    }
+};
+
 void TestRainy() {
-    SensorStub sensor(26, 70, 72, 52);
-    std::string report = Report(sensor);
-    std::cout << report << std::endl;
-    assert(report.find("rain") != std::string::npos);
+    SensorStub sensor;
+    string report = WeatherSpace::Report(sensor);
+    std::cout << "TestRainy: " << report << std::endl;
+    assert(report == "Heavy rain");
 }
+
 
 void TestHighPrecipitationAndLowWindspeed() {
-    // This instance of stub needs to be different-
-    // to give high precipitation (>60) and low wind-speed (<50)
-    SensorStub sensor(65, 70, 28.5, 45);
-
-    // strengthen the assert to expose the bug
-    // (function returns Sunny day, it should predict rain)
-    std::string report = Report(sensor);
-    assert(report == "Partly cloudy");
+    HighPrecipitationLowWindStub sensor;
+    string report = WeatherSpace::Report(sensor);
+    std::cout << "TestHighPrecipitationAndLowWindspeed: " << report << std::endl;
+    assert(report == "Heavy rain");
 }
+
